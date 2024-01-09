@@ -90,7 +90,7 @@ else
 fi
 
 # Logging off
-echo -e "\n INFO:LOGGING OFF................
+echo -e "\n INFO:LOGGING OFF..............."
 rm -rf ~/.aws/config
 rm -rf ~/.aws/credentials
 rm -rf ~/.azure
