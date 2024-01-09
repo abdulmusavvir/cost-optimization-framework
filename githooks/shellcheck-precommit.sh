@@ -31,7 +31,6 @@ fi
 # -------------------------------
 
 files="$(git diff --staged --name-only | grep -E '.sh$')"
-echo $files
 for file in $files;
 do 
    if [[ -n $file ]]; then
