@@ -36,7 +36,7 @@ do
    if [[ -n $file ]]; then
       ${ShellcheckBinary} ${file} --severity=warning
       if [[ $? -ne 0 ]]; then
-         echo -e "\nERROR: shellcheck detected warnings or errors, please see above and fix the issue(s).\n"
+         echo -e "\nERROR: shellcheck detected warnings or errors, please see above and fix the issue(s).\n "
          exit 1
       fi
    fi
