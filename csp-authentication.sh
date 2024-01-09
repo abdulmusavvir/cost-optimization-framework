@@ -20,12 +20,12 @@ fi
 
 command -v yq > /dev/null 2>&1
 RETURNCODE="${?}"
-if [[ "${RETURNCODE} -ne 0" ]]; then
+if [[ "${RETURNCODE}" -ne 0 ]]; then
     wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq > /dev/null 2>&1
     chmod +x /usr/bin/yq > /dev/null 2>&1
     command -v yq > /dev/null 2>&1
     RETURNCODE="${?}"
-    if [[ "${RETURNCODE} -eq 0" ]]; then
+    if [[ "${RETURNCODE}" -eq 0 ]]; then
       echo -e "\n INFO: yq is successfully installed................"
     else
       echo -e "\n ERROR: There is some error while installing yq package.........."
@@ -77,10 +77,7 @@ password=$(yq eval '.auth_config.azure.client_secret' "${AuthFilePath}")
 
 # Validating Authentication
 echo -e "\n INFO: Validating Azure Authentication"
-AzureLogin=$(az login --service-principal \
-             -u "${client_id}" -p "${password}" \
-             --tenant "${tenant_id}"  --allow-no-subscriptions)
-
+az login --service-principal -u "${client_id}" -p "${password}" --tenant "${tenant_id}"  --allow-no-subscriptions
 RETURNCODE="${?}"
 
 if [[ "${RETURNCODE}" -eq 0 ]]; then
@@ -96,10 +93,4 @@ fi
 echo -e "\n INFO:LOGGING OFF................."
 rm -rf ~/.aws/config
 rm -rf ~/.aws/credentials
-rm -rf ~/.azure/
-
-
-
-
-
-
+rm -rf ~/.azure
