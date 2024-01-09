@@ -74,5 +74,5 @@ if [[ -z "${AWSCheck}" ]]; then
         /opt/aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli
     fi       
 else
-    echo -e "\n INFO: AWS CLI is already install in the system, Skipping Installation"
+    echo -e "\n INFO: AWS CLI is already install in the system, Skipping Installation"""
 fi
