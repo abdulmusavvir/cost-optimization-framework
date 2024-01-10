@@ -11,7 +11,7 @@ repos:
         exclude: README.md
 -   repo: local
     hooks:
-    -   id: shell-check
+    -   id: Shell-check
         name: shell-check
         entry: githooks/shellcheck-precommit.sh
         language: script
