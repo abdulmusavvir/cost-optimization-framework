@@ -13,7 +13,7 @@ function prerequisit_packages(){
              echo -e "\n INFO: ${package} is already installed........."
           else
              echo -e "\n INFO: ${package} is installing........."
-             yum install -y "${package}" > /dev/null 2>&1 
+             yum install -y "${package}" > /dev/null 2>&1
              status=$(command -v "${package}")
                 if [[ -n "${status}" ]]; then
                     echo -e "\n SUCCESS: ${package} is installed........."
@@ -32,8 +32,8 @@ function prerequisit_packages(){
              echo -e "\n INFO: ${package} is already installed........."
           else
              echo -e "\n INFO: ${package} is installing........."
-             apt-get update -y > /dev/null 
-             apt-get install -y "${package}" > /dev/null 2>&1 
+             apt-get update -y > /dev/null
+             apt-get install -y "${package}" > /dev/null 2>&1
              status=$(command -v "${package}")
                 if [[ -n "${status}" ]]; then
                     echo -e "\n SUCCESS: ${package} is installed successfully........."
@@ -60,7 +60,7 @@ if [[ -z "${AZCheck}" ]]; then
        AZCheck=$(command -v az)
     else
        UbuntuDistribution=$(command -v apt-get)
-       echo -e "\n INFO: Ubuntu Distribution..................."      
+       echo -e "\n INFO: Ubuntu Distribution..................."
         # Creating script folder for azure
         mkdir /opt/scripts
         # Downloading Azure shell script
@@ -76,7 +76,7 @@ if [[ -z "${AZCheck}" ]]; then
             echo -e "\n ERROR: Az cli installation failed."
             exit 1
         fi
-    fi  
+    fi
 else
     echo -e "\n INFO: AZURE CLI is already install in the system, Skipping Installation"
 fi
