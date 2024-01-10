@@ -1,0 +1,17 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: end-of-file-fixer
+-   repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+    -   id: detect-secrets
+        name: detect-secrets
+        exclude: README.md
+-   repo: local
+    hooks:
+    -   id: shell-check
+        name: shell-check
+        entry: githooks/shellcheck-precommit.sh
+        language: script

@@ -21,7 +21,7 @@ if [[ -z "${ShellcheckBinary}" ]]; then
         echo -e  "\n ERROR: There is some error while installing shellcheck.........."
     fi
 else
-     ShellcheckBinary=$(command -v /tmp/shellcheck-${shellcheckVersion}/shellcheck) 
+     ShellcheckBinary=$(command -v /tmp/shellcheck-${shellcheckVersion}/shellcheck)
      echo -e "\n INFO: Shellcheck is already installed... hence skipping installation................."
 fi
 
@@ -32,7 +32,7 @@ fi
 
 files="$(git diff --staged --name-only | grep -E '.sh$')"
 for file in $files;
-do 
+do
    if [[ -n $file ]]; then
       ${ShellcheckBinary} ${file} --severity=warning
       if [[ $? -ne 0 ]]; then
